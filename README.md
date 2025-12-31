@@ -1,8 +1,5 @@
 # HRMS.JWT.API
-HRMS.JWT.API
- # HRMS.JWT.API
-
-Secure ASP.NET Core Web API for a basic Human Resource Management System focusing on employee salary adjustment workflow.
+  Secure ASP.NET Core Web API for a basic Human Resource Management System focusing on employee salary adjustment workflow.
 
 ## Features
 
