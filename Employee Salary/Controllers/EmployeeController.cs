@@ -62,7 +62,7 @@ namespace Employee_Salary.Controllers
                 return NotFound(new { message = "Employee not found" });
             }
 
-            // Group karke nested JSON banao (exactly note jaisa)
+            // Group then nested JSON is created
             var result = employeeData
                 .GroupBy(x => new { x.employeeid, x.Ename, x.designation })
                 .Select(g => new

@@ -1,14 +1,4 @@
-﻿//namespace Employee_Salary.Models
-//{
-//    public class SalaryApproval
-//    {
-//        public Employee EmployeeID { get; set; } = null!;
-//        public SalaryAdjustment Docno { get; set; }
-//        public string ApprovedBy { get; set; } = null!;
-//        public DateTime ApprovedOn { get; set; }
-//    }
-//}
-using System.ComponentModel.DataAnnotations;
+﻿ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Employee_Salary.Models
