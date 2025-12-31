@@ -1,0 +1,46 @@
+# .NET / ASP.NET Core
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]ogs/
+
+# Visual Studio
+.vs/
+.vscode/
+*.vsconfig
+
+# NuGet
+packages/
+
+# Appsettings personal (connection string secret na jaaye)
+appsettings.*.json
+!appsettings.json
+!appsettings.Development.json
+
+
+# Database files
+*.mdf
+*.ldf
+
+# Certificates
+*.pfx
+
+# Mac/Windows junk
+.DS_Store
+Thumbs.db
