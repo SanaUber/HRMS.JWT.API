@@ -28,7 +28,7 @@ bld/
 # NuGet
 packages/
 
-# Appsettings personal (connection string secret na jaaye)
+# Appsettings personal (connection string)
 appsettings.*.json
 !appsettings.json
 !appsettings.Development.json
