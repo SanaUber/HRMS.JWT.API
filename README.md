@@ -9,7 +9,7 @@
   - Salary Adjustments (with effective date and increment)
   - Salary Approvals (approved by whom and when)
 - **Authorization** – 
-  - Regular employees can view only their own data
+  - Regular employees can view only their own data and other when got authorized
   - Project Manager ("def") can view any employee's data
 - **Designation Management** – POST `/api/Designation` to create new designations
 - **EF Core Code-First** – Database created via migrations with seeded data (minimum 10 salary adjustment records)
