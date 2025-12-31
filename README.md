@@ -1,59 +1,51 @@
 # HRMS.JWT.API
 HRMS.JWT.API
-Project Overview
-HRMS.JWT.API is a secure ASP.NET Core Web API for a basic Human Resource Management System (HRMS) with a focus on employee salary adjustment workflow.
-This API implements:
+ # HRMS.JWT.API
 
-Token-based authentication using JWT (JSON Web Tokens)
-Secure employee details retrieval with nested salary adjustments and approvals
-Role-based access (Project Manager can view other employees' data)
-CRUD operations (e.g., create new designations)
-Data seeding via EF Core migrations (including minimum 10 salary adjustment records)
+Secure ASP.NET Core Web API for a basic Human Resource Management System focusing on employee salary adjustment workflow.
 
-The project follows real-world practices like manual LINQ joins, secure endpoints, and clean architecture.
-Key Features
+## Features
 
-JWT Authentication – Login endpoint returns JWT token with claims (UserId, Name, Designation)
-Secure Employee Details – GET endpoint returns nested JSON with:
-Employee info
-Designation
-Salary Adjustments (with WEF and increment)
-Salary Approvals (approved by whom and when)
+- **JWT Token-Based Authentication** – Login returns JWT with claims (UserId, Name, Designation)
+- **Secure Employee Details** – GET `/api/Employee/{employeeID}` returns nested JSON:
+  - Employee info & designation
+  - Salary Adjustments (with effective date and increment)
+  - Salary Approvals (approved by whom and when)
+- **Authorization** – 
+  - Regular employees can view only their own data
+  - Project Manager ("def") can view any employee's data
+- **Designation Management** – POST `/api/Designation` to create new designations
+- **EF Core Code-First** – Database created via migrations with seeded data (minimum 10 salary adjustment records)
+- **Manual LINQ Joins** – Complex nested query without navigation properties
 
-Authorization – Users can view only their own data. Project Manager ("def") can view any employee's data
-Designation Management – POST endpoint to create new designations
-EF Core Code-First – Database created via migrations with seeded data
-Manual LINQ Joins – Complex query without navigation properties for better control
+## Tech Stack
 
-Tech Stack
+- .NET 8 ASP.NET Core Web API
+- Entity Framework Core (Code-First)
+- JWT Authentication
+- SQL Server (LocalDB/SQL Express)
 
-.NET 8 (ASP.NET Core Web API)
-Entity Framework Core (Code-First with migrations)
-JWT Authentication (Microsoft.AspNetCore.Authentication.JwtBearer)
-SQL Server (LocalDB or SQL Express)
+## Database Schema
 
-Database Schema
+- LoginUser, Employee, Designation, SalaryAdjustment, SalaryApproval
+- Seeded data:
+  - Employees: "abc" (Document Controller), "def" (Project Manager)
+  - 10 Salary Adjustments + 10 Approvals for "abc" (approved by "def")
 
-LoginUser – UserId (PK), Password (plain text for demo – hash in production)
-Designation – DesignationID (PK), DesignationName
-Employee – EmployeeID (PK), EName, DesignationID (FK)
-SalaryAdjustment – Docno (PK), EmployeeID (FK), SalaryIncrement, WEF
-SalaryApproval – Id (PK), EmployeeID + Docno (composite FK), ApprovedBy, ApprovedOn
+## API Endpoints
 
-Seeded data includes:
+| Method | Endpoint                     | Description                          | Auth |
+|--------|------------------------------|--------------------------------------|------|
+| POST   | `/api/Auth/login`            | Get JWT token                        | No   |
+| GET    | `/api/Employee/{employeeID}` | Get employee details (nested)        | Yes  |
+| POST   | `/api/Designation`           | Create new designation               | Yes  |
 
-Employees: "abc" (Document Controller), "def" (Project Manager)
-10 Salary Adjustments for "abc"
-10 corresponding Salary Approvals (approved by "def")
+## How to Run
 
-API Endpoints
-
-
-
-
-
-
-
+1. Clone repo
+   ```bash
+   git clone https://github.com/yourusername/HRMS.JWT.API.git
+   cd HRMS.JWT.API
 
 
 
