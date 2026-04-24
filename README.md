@@ -1,6 +1,41 @@
 # HRMS.JWT.API
   Secure ASP.NET Core Web API for a basic Human Resource Management System focusing on employee salary adjustment workflow.
+# Project Objective
+Sqlserver: 172.16.101.4
+Username: Sa
+Password : 123
 
+Create database Employees
+
+Table: LoginUser (userid, password)
+Table: Employees (EmployeeID, EName, DesignationID)
+Table: Designations (DesignationID, DesignationName)
+Table: SalaryAdjustments (Docno, EmployeeID, SalaryIncrement, WEF) (Add minimum 10 Records)
+Table SalaryApprovals (Employeeid, approvedby, docno, approvedon)
+
+SQL Scripts
+Prepare Select Statement
+
+//OutPut secure WebAPI ASP.net (Token Based and Rolewise access)
+
+1.Login
+2.Get Employees with Single Statement, produce below json script USING “LINQ”
+
+{
+“employeeID”: “abc”
+“Ename”: “abcemployee”
+Designations:{ “designation” : “Document controller”}
+SalaryDetails:{ Docno: 1, “EmployeeID”: “abc”, Wef:“01/10/1900” }
+Salaryapprovals:[
+{“employeeid” , “abc”, “approvedby”: “projectmanager” , “approvedon” : 01/011900},
+{“employeeid” , “abc”, “approvedby”: “projectmanager” , “approvedon” : 01/011900},
+{“employeeid” , “abc”, “approvedby”: “projectmanager” , “approvedon” : 01/011900},
+{“employeeid” , “abc”, “approvedby”: “projectmanager” , “approvedon” : 01/011900},
+{“employeeid” , “abc”, “approvedby”: “projectmanager” , “approvedon” : 01/011900}
+]
+}
+
+3.Post Method create Designations
 ## Features
 
 - **JWT Token-Based Authentication** – Login returns JWT with claims (UserId, Name, Designation)
